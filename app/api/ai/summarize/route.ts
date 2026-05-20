@@ -1,12 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Groq } from 'groq-sdk';
-
-const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY,
-});
+import { getGroqClient } from '@/lib/groq';
 
 export async function POST(request: NextRequest) {
   try {
+    const groq = getGroqClient();
     const { content, maxLength = 300 } = await request.json();
 
     if (!content) {

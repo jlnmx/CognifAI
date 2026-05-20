@@ -1,9 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Groq } from 'groq-sdk';
-
-const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY,
-});
+import { getGroqClient } from '@/lib/groq';
 
 interface QuizQuestion {
   type: 'multiple-choice' | 'true-false' | 'identification';
@@ -15,6 +11,7 @@ interface QuizQuestion {
 
 export async function POST(request: NextRequest) {
   try {
+    const groq = getGroqClient();
     const { content, numberOfQuestions = 5 } = await request.json();
 
     if (!content) {

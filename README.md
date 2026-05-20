@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CognifAI
 
-## Getting Started
+CognifAI is an AI-powered student productivity platform built with Next.js, Tailwind CSS, Zustand, Firebase, Auth.js, Groq, Recharts, and Lucide React.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Upload notes and PDFs
+- Generate quizzes and flashcards
+- Chat with AI about lessons
+- Track study habits and tasks
+- Organize subjects and recent uploads
+- Analyze weak topics and study performance
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js App Router
+- Tailwind CSS
+- shadcn/ui-ready component patterns
+- Recharts for analytics
+- Zustand for local UI state
+- Firebase for database and storage
+- Auth.js for authentication
+- Groq API for AI tutoring and content generation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup
 
-## Learn More
+1. Install dependencies.
+2. Copy `.env.local.example` to `.env.local` and fill in your keys.
+3. Run the dev server with `npm run dev`.
 
-To learn more about Next.js, take a look at the following resources:
+## Environment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Required variables are documented in `.env.local.example`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Routes
 
-## Deploy on Vercel
+- `/` landing page
+- `/dashboard` main app dashboard
+- `/notes` uploads and note management
+- `/quizzes` quiz generation and review
+- `/flashcards` spaced repetition cards
+- `/analytics` study metrics and weak topics
+- `/auth/signin` sign-in placeholder
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The current implementation uses route stubs and UI scaffolding. Firebase persistence, Auth.js session handling, PDF extraction, and full database wiring are ready to add next.
